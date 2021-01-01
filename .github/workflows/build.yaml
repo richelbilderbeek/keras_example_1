@@ -1,0 +1,26 @@
+on:
+  push:
+  pull_request:
+
+name: Check
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+
+    - name: checkout repo content
+      uses: actions/checkout@v2
+
+    - name: setup python
+      uses: actions/setup-python@v2
+
+    - name: install gym
+      run: python3 -m pip install -U gym --user
+
+    - name: download code
+      run: ./get_code.sh
+
+    - name: run script
+      run: python actor_critic_cartpole.py
+
