@@ -15,6 +15,9 @@ jobs:
     - name: setup python
       uses: actions/setup-python@v2
 
+    - name: get Python version
+      run: python3 --version
+
     - name: upgrade pip
       run: python3 -m pip install --upgrade pip
 
@@ -28,5 +31,5 @@ jobs:
       run: ./get_code.sh
 
     - name: run script
-      run: python actor_critic_cartpole.py
+      run: python3 actor_critic_cartpole.py
 
