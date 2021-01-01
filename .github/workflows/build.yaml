@@ -18,6 +18,9 @@ jobs:
     - name: install gym
       run: python3 -m pip install -U gym --user
 
+    - name: install tensorflow
+      run: python3 -m pip install -U tensorflow --user
+
     - name: download code
       run: ./get_code.sh
 
